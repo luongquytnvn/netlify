@@ -2,7 +2,6 @@
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
-  background-color: #cfcfcf;
 
   & * {
     font-size: 1.8vh;
@@ -23,12 +22,20 @@
     height: 100vh;
   }
 
-  @media only screen and (max-width: 575px) and (orientation: portrait) {
-    .bs-background-form {
-      left: 0;
-      width: 100%;
-      height: 100vh;
-    }
+  //@media only screen and (max-width: 575px) and (orientation: portrait) {
+  //  .bs-background-form {
+  //    left: 0;
+  //    width: 100%;
+  //    height: 100vh;
+  //  }
+  //}
+
+  @media only screen and (orientation: portrait) {
+    background-color: yellow;
+  }
+
+  @media only screen and (orientation: landscape) {
+    background-color: #cfcfcf;
   }
 }
 
