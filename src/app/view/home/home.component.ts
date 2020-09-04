@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   availWidth: BehaviorSubject<any> = new BehaviorSubject<any>(0);
   outerWidth: BehaviorSubject<any> = new BehaviorSubject<any>(0);
   outerHeight: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+  documentHeight: BehaviorSubject<any> = new BehaviorSubject<any>(0);
 
   constructor() {
   }
@@ -45,11 +46,12 @@ export class HomeComponent implements OnInit {
     //   });
 
     $(document).ready(() => {
+      this.documentHeight.next($(document).height());
       const bs1 = $('.bs-background');
       const bs2 = $('.bs-background-form');
       const bs3 = $('.sb-form');
-      if (window.innerHeight < window.screen.availHeight) {
-        bs2.height(window.screen.height);
+      if (window.innerHeight < window.screen.availHeight && screen.width <= 575) {
+        bs2.height(window.screen.availHeight);
         bs2.width(bs2.height() * 55 / 100);
         bs3.height(window.screen.availHeight);
         bs1.find('*').css('font-size', bs3.height() * 1.8 / 100);
