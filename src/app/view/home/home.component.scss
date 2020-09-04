@@ -22,13 +22,13 @@
     height: 100vh;
   }
 
-  //@media only screen and (max-width: 575px) and (orientation: portrait) {
-  //  .bs-background-form {
-  //    left: 0;
-  //    width: 100%;
-  //    height: 100vh;
-  //  }
-  //}
+  @media only screen and (max-device-width: 575px) and (orientation: portrait) {
+    .bs-background-form {
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
+  }
 
   @media only screen and (orientation: portrait) {
     background-color: yellow;
