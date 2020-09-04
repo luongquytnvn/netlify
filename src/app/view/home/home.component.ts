@@ -50,14 +50,14 @@ export class HomeComponent implements OnInit {
       const bs1 = $('.bs-background');
       const bs2 = $('.bs-background-form');
       const bs3 = $('.sb-form');
+      bs1.removeClass('bs-background-mobile');
       bs2.removeClass('bs-background-form-mobile');
-      bs3.removeClass('bs-background-mobile');
-      bs1.removeClass('bs-form-mobile');
+      bs3.removeClass('bs-form-mobile');
       if ((innerHeight < (screen.height * 90 / 100)) && (screen.width <= 575)) {
         if (screen.width < screen.height) {
+          bs1.addClass('bs-background-mobile');
           bs2.addClass('bs-background-form-mobile');
           bs3.addClass('bs-form-mobile');
-          bs1.addClass('bs-form-mobile');
           const bs4 = $('.bs-background-form-mobile');
           const bs5 = $('.bs-form-mobile');
           const bs6 = $('.bs-background-mobile');
