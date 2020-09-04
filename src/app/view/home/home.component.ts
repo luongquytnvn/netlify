@@ -50,11 +50,21 @@ export class HomeComponent implements OnInit {
       const bs1 = $('.bs-background');
       const bs2 = $('.bs-background-form');
       const bs3 = $('.sb-form');
-      if (window.innerHeight < window.screen.availHeight && screen.width <= 575) {
-        bs2.height(window.screen.availHeight);
-        bs2.width(bs2.height() * 55 / 100);
-        bs3.height(window.screen.availHeight);
-        bs1.find('*').css('font-size', bs3.height() * 1.8 / 100);
+      bs2.removeClass('bs-background-form-mobile');
+      bs3.removeClass('bs-background-mobile');
+      bs1.removeClass('bs-form-mobile');
+      if ((innerHeight < (screen.height * 90 / 100)) && (screen.width <= 575)) {
+        if (screen.width < screen.height) {
+          bs2.addClass('bs-background-form-mobile');
+          bs3.addClass('bs-form-mobile');
+          bs1.addClass('bs-form-mobile');
+          const bs4 = $('.bs-background-form-mobile');
+          const bs5 = $('.bs-form-mobile');
+          const bs6 = $('.bs-background-mobile');
+          bs4.height(screen.height);
+          bs5.height(screen.height);
+          bs6.find('*').css('font-size', screen.height * 1.8 / 100);
+        }
       }
     });
   }
