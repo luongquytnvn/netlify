@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.resize();
     $(window).resize(() => {
       this.resize();
     });
@@ -44,25 +43,17 @@ export class HomeComponent implements OnInit {
     //     console.log(h);
     //     $('html, body').css({width: w, height: h});
     //   });
-  }
 
-  // setBG() {
-  //   $(document).ready(() => {
-  //     const bs1 = $('.bs-background');
-  //     const bs2 = $('.bs-background-form');
-  //     const bs3 = $('.sb-form');
-  //     console.log(window.innerHeight);
-  //     console.log(window.screen.height);
-  //     if ((window.innerHeight < window.screen.height * 45 / 100)
-  //       && (window.screen.height < window.screen.width)) {
-  //       bs2.height(window.screen.height);
-  //       bs2.width(bs2.height() * 55 / 100);
-  //       bs3.height(window.screen.height);
-  //     } else {
-  //       bs2.height(window.innerHeight);
-  //       bs2.width(bs2.height() * 55 / 100);
-  //       bs3.height(window.innerHeight);
-  //     }
-  //   });
-  // }
+    $(document).ready(() => {
+      const bs1 = $('.bs-background');
+      const bs2 = $('.bs-background-form');
+      const bs3 = $('.sb-form');
+      if (window.innerHeight < window.screen.availHeight) {
+        bs2.height(window.screen.height);
+        bs2.width(bs2.height() * 55 / 100);
+        bs3.height(window.screen.availHeight);
+        bs1.find('*').css('font-size', bs3.height() * 1.8 / 100);
+      }
+    });
+  }
 }
