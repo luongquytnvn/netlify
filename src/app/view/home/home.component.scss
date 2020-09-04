@@ -30,7 +30,7 @@
     }
   }
 
-  @media only screen and (orientation: portrait) {
+  @media only screen and (orientation: portrait) and (max-device-width: 700px) {
     background-color: yellow;
   }
 

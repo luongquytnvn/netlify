@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 declare var $: any;
 
@@ -8,6 +9,14 @@ declare var $: any;
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  screenWidth: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+  screenHeight: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+  innerHeight: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+  innerWidth: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+  availHeight: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+  availWidth: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+  outerWidth: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+  outerHeight: BehaviorSubject<any> = new BehaviorSubject<any>(0);
 
   constructor() {
   }
@@ -20,13 +29,21 @@ export class HomeComponent implements OnInit {
   }
 
   resize() {
-    $(document).ready(() => {
-      const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-      const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      console.log(w);
-      console.log(h);
-      $('html, body').css({width: w, height: h});
-    });
+    this.screenHeight.next(screen.height);
+    this.screenWidth.next(screen.width);
+    this.innerHeight.next(window.innerHeight);
+    this.innerWidth.next(window.innerWidth);
+    this.availHeight.next(screen.availHeight);
+    this.availWidth.next(screen.availWidth);
+    this.outerWidth.next(window.outerWidth);
+    this.outerHeight.next(window.outerHeight);
+    //   $(document).ready(() => {
+    //     const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    //     const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    //     console.log(w);
+    //     console.log(h);
+    //     $('html, body').css({width: w, height: h});
+    //   });
   }
 
   // setBG() {
