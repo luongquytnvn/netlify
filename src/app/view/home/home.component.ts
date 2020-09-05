@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    $(window).resize(() => {
-      this.resize();
-    });
+    // $(window).resize(() => {
+    //   this.resize();
+    // });
   }
 
   resize() {
