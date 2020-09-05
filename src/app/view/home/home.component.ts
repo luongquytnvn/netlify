@@ -75,7 +75,11 @@ export class HomeComponent implements OnInit {
           // bs5.height(screen.height);
           // bs6.find('*').css('font-size', screen.height * 1.8 / 100);
           this.heightCustom.next(screen.height);
+        } else {
+          this.heightCustom.next(null);
         }
+      } else {
+        this.heightCustom.next(null);
       }
     });
   }

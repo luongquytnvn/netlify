@@ -28,7 +28,7 @@
 <!--</div>-->
 
 <div class="bg-container">
-  <div class="bg-login" [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) + 'px'} : null">
+  <div class="bg-login" [ngClass]="{'bg-login-mobile': (heightCustom | async)}" [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) + 'px'} : null">
     <div class="sb-login-custom-form" [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) + 'px'} : null">
       <div class="w-100"
            style="position: relative; height: 14%">
