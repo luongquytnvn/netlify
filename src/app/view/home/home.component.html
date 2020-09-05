@@ -1,4 +1,4 @@
-<div class="bs-background">
+<!-- <div class="bs-background">
   <div class="bs-background-form">
     <div class="sb-form">
       <form class="h-100">
@@ -25,4 +25,143 @@
       </form>
     </div>
   </div>
+</div> -->
+
+<!-- <div class="bg-container"
+	 *ngIf="!(authService.isRegister$ | async)">
+	<div class="bg-login" [ngClass]="{'bg-login-mobile': (authService.isMobile | async)}">
+		<div class="sb-login-custom-form">
+	<div class="w-100"
+		 style="position: relative; height: 14%">
+		<div class="text-center w-100" style="position: absolute; bottom: 0">
+			<img alt="" style="height: 8.5vh"
+				 [src]="translate.currentLang == 'vn' ? 'assets/media/logos/logo-seabank.png' : 'assets/media/logos/logo-seabank.png'">
+		</div>
+	</div>
+
+	<div class="w-100"
+		 style="color: #ffffff; position: relative; height: 16%">
+		<div class="text-center"
+			 [ngStyle]="{'margin-right': (translate.currentLang == 'vn' ? 2 : 3.6) + 'vh'
+		 , 'margin-left': (translate.currentLang == 'vn' ? 2 : 3.6) + 'vh'}"
+			 style="position: absolute; bottom: 0; line-height: 3.5vh !important;">
+			<span style="font-size: 2.4vh !important;"> {{ 'AUTH.GENERAL.TITLE1' | translate }}
+				<a><img class="sb-cursor-pointer"
+						style="height: 2.5vh !important; padding-bottom: 0.67vh"
+						src="assets/media/logos/logo-seanet.png" alt="logo-seanet">
+				</a> {{ 'AUTH.GENERAL.TITLE2' | translate }}
+			</span>
+		</div>
+	</div>
+	<div class="w-100"
+		 style="position: relative; height: 8%">
+		<kt-auth-notice
+			*ngIf="!(isControlHasError('username','required') || (isControlHasError('password','required')))"
+			class="sb-custom-error w-100" style="font-size: 1.6vh !important;" [isClicked]="isClickedLogin"></kt-auth-notice>
+		<mat-error class="sb-custom-error w-100"
+				   *ngIf="(isControlHasError('username','required') || (isControlHasError('password','required')))">
+			<div class="text-center w-100 shakeit">
+				<span class="text-white" style="font-size: 1.6vh !important;">{{ 'AUTH.VALIDATION.EMPTY_FIELD' | translate }}</span>
+			</div>
+		</mat-error>
+	</div>
+	<div class="w-100 text-right"
+		style="height: 5vh">
+		<span class="sb-login-lang" style="cursor: pointer; margin-right: 2vh" (click)="setLanguage()">
+			<i style="font-size: 2vh !important; margin-right: 1vh" class="fas fa-globe-asia"></i>
+			<span style="font-weight: 600; font-size: 2vh !important;">VI/EN</span>
+		</span>
+	</div>
+	<div class="w-100"
+		 style="height: 22%; position: relative">
+		<form class="kt-form h-100" [formGroup]="loginForm" autocomplete="off">
+			<div class="form-group m-0" style="height: 32%">
+				<div class="d-inline-flex w-100" style="position: relative">
+					<img alt=""
+						style="position: absolute; z-index: 1; height: 1.8vh; left: 2vh; bottom: 0.8vh"
+						src="assets/media/logos/icon-user.png">
+					<input
+						trimSpace [style.cursor]="loading == true ? 'no-drop' : 'default'" maxlength="50"
+						class="inp1"
+						id="input1"
+						(focusout)="focusout()"
+						(focusin)="focusin()"
+						autocomplete="new-password"
+						name="username" type="text" placeholder="{{ 'AUTH.INPUT.USERNAME' | translate }}"
+						formControlName="username"/>
+					<img *ngIf="!loginForm.controls.username.hasError('required') && loginForm.controls.username.value"
+						 class="sb-cursor-pointer"
+						 style="position: absolute; z-index: 1; height: 1.54vh; right: 2vh; bottom: 0.8vh"
+						 src="assets/media/logos/logo_xoa.png" (click)="clearUser()" alt="icon-delete">
+				</div>
+			</div>
+
+			<div class="form-group m-0"  style="height: 32%">
+				<div class="d-inline-flex w-100" style="position: relative">
+					<img alt=""
+						 style="position: absolute; z-index: 1; height: 1.8vh; left: 2vh; bottom: 0.8vh"
+						src="assets/media/logos/logo_mat_khau.png">
+
+					<input trimSpace #eye [style.cursor]="loading == true ? 'no-drop' : 'default'" maxlength="32"
+						   class="inp2"
+						   id="input2"
+						   (focusout)="focusout()"
+						   (focusin)="focusin()"
+						   name="new-password" type="password" placeholder="{{ 'AUTH.INPUT.PASSWORD' | translate }}"
+						   formControlName="password"
+						   autocomplete="new-password"/>
+					<i *ngIf="!loginForm.controls.password.hasError('required') && eye.type=='text' && loginForm.controls.password.value"
+					   style="position: absolute; z-index: 1; height: 1.58vh; right: 4vh; bottom: 0.8vh"
+					   class="fa fa-eye text-white sb-cursor-pointer" aria-hidden="true"
+					   (click)="eye.type='password'"></i>
+					<i *ngIf="!loginForm.controls.password.hasError('required') && eye.type=='password' && loginForm.controls.password.value"
+					   style="position: absolute; z-index: 1; height: 1.58vh; right: 4vh; bottom: 0.8vh"
+					   class="fa fa-eye-slash text-white sb-cursor-pointer" aria-hidden="true"
+					   (click)="eye.type='text'"></i>
+					<img *ngIf="!loginForm.controls.password.hasError('required') && loginForm.controls.password.value"
+						 class="sb-cursor-pointer"
+						 style="position: absolute; z-index: 1; height: 1.54vh; right: 2vh; bottom: 0.8vh"
+						 src="assets/media/logos/logo_xoa.png" (click)="clearPassword()" alt="icon-delete">
+				</div>
+			</div>
+
+			<!--begin::Action-->
+			<div class="text-center m-0"  style="height: 36%">
+				<button [disabled]="loading == true" (click)="submit()"
+						[style.cursor]="loading == true ? 'no-drop' : 'pointer'"
+						class="button-login">{{ 'AUTH.LOGIN.BUTTON' | translate }}
+				</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="w-100"
+		 style="height: 9%">
+		<div class="text-center">
+			<div class="forget-password">
+				<span class="sb-cursor-pointer" (click)="forgotPassword()">{{ 'AUTH.FORGOT.TITLE' | translate }}</span>
+			</div>
+		</div>
+		<div class="text-center">
+			<div class="sign-up-seanet">
+				<span class="sb-cursor-pointer" (click)="register()">{{ 'AUTH.REGISTER.TITLE_LOGIN' | translate }}</span>
+			</div>
+		</div>
+	</div>
+	<div class="w-100 text-center"
+		 style="height: 26%">
+		<img class="h-75" src="assets/media/logos/QRcode.png" alt="qr-code">
+	</div>
 </div>
+
+	</div>
+	<div *ngIf="!(authService.isMobile | async)" class="d-flex justify-content-center" style="max-height: 7vh; position: absolute; left: 0; width: 100%; font-size: 1.5vh !important;" [ngStyle]="{'bottom': (authService.footer | async) + 'px'}">
+		<div class="form-group text-center">
+			<div class="text-note" style="font-size: 1.5vh;">
+				Hội sở: 25 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội | Điện thoại: (+84 24) 3944 8688 | Fax: (+84 24) 3944 8689
+				<br/>
+				Website: http://www.seabank.com.vn | Email: contact@seabank.com.vn
+			</div>
+		</div>
+	</div>
+</div> -->
