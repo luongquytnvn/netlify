@@ -241,3 +241,136 @@
 // 	}
 // }
 
+// @import url('https://fonts.googleapis.com/css?family=Numans');
+
+// .bg-container {
+// 	position: relative;
+// 	//min-height: 100vh;
+// 	height: 100vh;
+// 	background-size: cover;
+// 	-webkit-background-size: cover;
+// 	-moz-background-size: cover;
+// 	-o-background-size: cover;
+// 	background-repeat: no-repeat;
+// 	font-family: 'Arial', sans-serif;
+// 	overflow: auto;
+// }
+
+// .bg-container-scroll {
+// 	overflow-y: scroll !important;
+// }
+
+// .bg-login {
+// 	width: 58vh;
+// 	left: 7%;
+// 	position: relative;
+// 	//min-height: 100vh;
+// 	height: 100vh;
+// 	top: 0;
+// 	background-color: #b61817;
+// 	opacity: 0.75;
+// 	background-size: inherit;
+// 	background-repeat: no-repeat;
+// 	-webkit-background-size: inherit;
+// 	-moz-background-size: inherit;
+// 	-o-background-size: inherit;
+// 	font-family: 'Arial', sans-serif;
+// 	filter: alpha(opacity=0.7);
+// }
+
+// .text-note {
+// 	position: relative;
+// 	font-family: "Arial", sans-serif;
+// 	color: #e3dcdc;
+// 	align-content: center;
+// 	z-index: 10;
+// }
+
+// .sb-custom-register-top-bar {
+// 	position: fixed;
+// 	height: 64px;
+// 	width: 100%;
+// 	padding: 0 100px;
+// 	background-color: #ffffff;
+// 	z-index: 1 !important;
+// }
+// //.bg-container {
+// //	background-image: url('assets/media/bg/background_resize_PC.png')
+// //}
+
+// @media only screen and (max-width: 767px) {
+// 	.sb-custom-register-top-bar {
+// 		padding: 0 !important;
+// 	}
+// }
+
+// .sb-custom-register-logo {
+// 	position: relative;
+// 	width: 100%;
+// 	height: 64px;
+
+// 	img {
+// 		position: absolute;
+// 		top: 50%;
+// 		transform: translateY(-50%);
+// 	}
+// }
+
+// .sb-custom-register-lang {
+// 	position: relative;
+// 	width: 100%;
+// 	height: 64px;
+
+// 	kt-language-selector {
+// 		position: absolute;
+// 		top: 50%;
+// 		right: 0;
+// 		transform: translateY(-50%);
+
+// 		.kt-header__topbar-item--langs {
+// 			padding: 0 !important;
+// 		}
+// 	}
+
+// 	.kt-nav__link-icon img {
+// 		height: 18px !important;
+// 		width: 18px !important;
+// 	}
+// }
+
+// .sb-custom-header-register {
+// 	height: 64px;
+// 	padding: 0;
+// }
+
+// //@media only screen and (max-width: 575px) {
+// //	.bg-container {
+// //		background-image: url('assets/media/bg/background_resize_mobile.png')
+// //	}
+// //}
+
+// @media only screen and (max-width: 1024px) {
+// 	.bg-login {
+// 		width: 48vh;
+// 	}
+// }
+
+// @media only screen and (max-width: 575px) and (orientation: portrait) {
+// 	.bg-login {
+// 		left: 0;
+// 		width: 100%;
+// 		height: 100vh;
+// 	}
+// }
+
+// @media only screen and (orientation: portrait) {
+// 	.bg-container {
+// 		background-image: url(assets/media/bg/background_resize_mobile.png)
+// 	}
+// }
+
+// @media only screen and (orientation: landscape) {
+// 	.bg-container {
+// 		background-image: url(assets/media/bg/background_resize_PC.png);
+// 	}
+// }
