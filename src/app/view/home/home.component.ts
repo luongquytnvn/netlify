@@ -25,10 +25,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.setFirst();
-    $(window).resize(() => {
-      this.resize();
-    });
+//     this.setFirst();
+//     $(window).resize(() => {
+//       this.resize();
+//     });
   }
 
   setFirst() {
