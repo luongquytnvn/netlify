@@ -57,29 +57,18 @@ export class HomeComponent implements OnInit {
 
     $(document).ready(() => {
       this.documentHeight.next($(document).height());
-      const bs1 = $('.bg-container');
       const bs2 = $('.bg-login');
       const bs3 = $('.sb-login-custom-form');
-      // bs1.removeClass('bs-background-mobile');
-      // bs2.removeClass('bs-background-form-mobile');
-      // bs3.removeClass('bs-form-mobile');
-      if ((innerHeight < (screen.height * 90 / 100)) && (screen.width <= 575)) {
-        if (screen.width < screen.height) {
-          // bs1.addClass('bs-background-mobile');
-          // bs2.addClass('bs-background-form-mobile');
-          // bs3.addClass('bs-form-mobile');
-          // const bs4 = $('.bs-background-form-mobile');
-          // const bs5 = $('.bs-form-mobile');
-          // const bs6 = $('.bs-background-mobile');
-          // bs4.height(screen.height);
-          // bs5.height(screen.height);
-          // bs6.find('*').css('font-size', screen.height * 1.8 / 100);
-          this.heightCustom.next(screen.height);
-        } else {
-          this.heightCustom.next(null);
-        }
-      } else {
-        this.heightCustom.next(null);
+      bs3.removeClass('sb-login-custom-form-mobile');
+      bs2.removeClass('bg-login-mobile');
+      this.heightCustom.next(null);
+      if ((innerHeight < (screen.height * 80 / 100)) && (screen.width <= 1024)) {
+        bs3.addClass('sb-login-custom-form-mobile');
+        this.heightCustom.next(screen.height);
+      }
+
+      if (innerWidth <= 575 && innerWidth < screen.height) {
+        bs2.addClass('bg-login-mobile');
       }
     });
   }

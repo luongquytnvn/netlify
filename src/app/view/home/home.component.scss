@@ -568,11 +568,15 @@
   }
 
   & * {
-    font-size: 1.9vh !important;
+    font-size: 1.9vh;
   }
 }
 
-@import url('https://fonts.googleapis.com/css?family=Numans');
+.sb-login-custom-form-mobile {
+  & * {
+    font-size: 15px;
+  }
+}
 
 .bg-container {
   position: relative;
