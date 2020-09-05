@@ -28,8 +28,8 @@
 <!--</div>-->
 
 <div class="bg-container">
-  <div class="bg-login">
-    <div class="sb-login-custom-form">
+  <div class="bg-login" [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) + 'px'} : null">
+    <div class="sb-login-custom-form" [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) + 'px'} : null">
       <div class="w-100"
            style="position: relative; height: 14%">
         <div class="text-center w-100" style="position: absolute; bottom: 0">
@@ -158,7 +158,6 @@
         </div>
       </div>
       <div class="w-100 text-center"
-           [ngStyle]="{}"
            style="height: 26%; background: antiquewhite">
         <img class="h-75 w-25" style="background: antiquewhite" src="assets/media/books/1.png" alt="qr-code">
       </div>
@@ -166,7 +165,6 @@
 
   </div>
   <div class="d-flex justify-content-center"
-       [ngStyle]="{}"
        style="max-height: 7vh; position: absolute; left: 0; width: 100%;bottom: 0; font-size: 1.5vh;">
     <div class="form-group text-center">
       <div class="text-note" style="font-size: 1.5vh;">
