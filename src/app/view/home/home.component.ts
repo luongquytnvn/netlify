@@ -19,14 +19,22 @@ export class HomeComponent implements OnInit {
   outerHeight: BehaviorSubject<any> = new BehaviorSubject<any>(0);
   documentHeight: BehaviorSubject<any> = new BehaviorSubject<any>(0);
   heightCustom: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  minHeight: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor() {
   }
 
   ngOnInit(): void {
+    this.setFirst();
     $(window).resize(() => {
       this.resize();
     });
+  }
+
+  setFirst() {
+    const bs2 = $('.bg-login');
+    const bs3 = $('.sb-login-custom-form');
+    this.minHeight.next(innerHeight > screen.height ? screen.height : innerHeight);
   }
 
   resize() {
@@ -64,10 +72,10 @@ export class HomeComponent implements OnInit {
       this.heightCustom.next(null);
       if ((innerHeight < (screen.height * 80 / 100)) && (screen.width <= 1024)) {
         bs3.addClass('sb-login-custom-form-mobile');
-        this.heightCustom.next(screen.height);
+        this.heightCustom.next(this.minHeight.getValue());
       }
 
-      if (innerWidth <= 575 && innerWidth < screen.height) {
+      if (innerWidth <= 575 && innerWidth === screen.height) {
         bs2.addClass('bg-login-mobile');
       }
     });
