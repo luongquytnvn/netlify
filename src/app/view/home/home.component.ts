@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit {
         this.heightCustom.next(this.minHeight.getValue());
       }
 
-      if (innerWidth <= 575 && innerWidth === screen.height) {
+      if (innerWidth <= 575 && screen.width < screen.height) {
         bs2.addClass('bg-login-mobile');
       }
     });
