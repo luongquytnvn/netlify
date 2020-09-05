@@ -700,15 +700,20 @@
 		left: 0;
 		width: 100%;
 		height: 100vh;
-		min-height: 173vw;
+		min-height: 150vw;
 	}
 
+  .sb-text-footer {
+    display: none !important;
+  }
+
   .sb-login-custom-form {
-    min-height: 173vw;
-    @media only screen and (max-height: 173vw){
-      & * {
-        font-size: 3.3vh;
-      }
+    min-height: 150vw;
+  }
+
+  @media only screen and (max-height: 173vw){
+    .sb-login-custom-form * {
+      font-size: 2.85vh;
     }
   }
 }
