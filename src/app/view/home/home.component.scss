@@ -695,7 +695,7 @@
   }
 }
 
-@media only screen and (max-device-width: 480px) and (min-device-height: 480px){
+@media only screen and (max-device-width: 480px) and (min-device-height: 480px) and (max-width: 575px){
   .bg-login {
 		left: 0;
 		width: 100%;
@@ -705,8 +705,10 @@
 
   .sb-login-custom-form {
     min-height: 173vw;
-    & * {
-      font-size: 3.3vh;
+    @media only screen and (max-height: 173vw){
+      & * {
+        font-size: 3.3vh;
+      }
     }
   }
 }
