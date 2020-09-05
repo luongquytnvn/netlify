@@ -695,7 +695,7 @@
   }
 }
 
-@media only screen and (max-width: 575px) and (orientation: portrait) {
+@media only screen and (max-device-width: 480px) and (min-device-height: 480px){
   .bg-login {
 		left: 0;
 		width: 100%;

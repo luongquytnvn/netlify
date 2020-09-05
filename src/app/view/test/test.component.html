@@ -105,46 +105,46 @@
 			</div>
 
 			<!--begin::Action-->
-			<div class="text-center m-0" [ngStyle]="{'height': ((auth.heightBgLogin | async) * 8 / 100) + 'px'}">
-				<button [disabled]="loading == true" (click)="submit()"
-						[style.cursor]="loading == true ? 'no-drop' : 'pointer'"
-						class="button-login">{{ 'AUTH.LOGIN.BUTTON' | translate }}
-				</button>
-			</div>
-		</form>
-	</div>
+<!--			<div class="text-center m-0" [ngStyle]="{'height': ((auth.heightBgLogin | async) * 8 / 100) + 'px'}">-->
+<!--				<button [disabled]="loading == true" (click)="submit()"-->
+<!--						[style.cursor]="loading == true ? 'no-drop' : 'pointer'"-->
+<!--						class="button-login">{{ 'AUTH.LOGIN.BUTTON' | translate }}-->
+<!--				</button>-->
+<!--			</div>-->
+<!--		</form>-->
+<!--	</div>-->
 
-	<div class="w-100 sb-login-custom-form-child"
-		 [ngStyle]="{'height': ((auth.heightBgLogin | async) * 9 / 100) + 'px'}">
-		<div class="text-center">
-			<div class="forget-password">
-				<span class="sb-cursor-pointer" (click)="forgotPassword()">{{ 'AUTH.FORGOT.TITLE' | translate }}</span>
-			</div>
-		</div>
-		<div class="text-center">
-			<div class="sign-up-seanet">
-				<span class="sb-cursor-pointer" (click)="register()">{{ 'AUTH.REGISTER.TITLE_LOGIN' | translate }}</span>
-			</div>
-		</div>
-	</div>
-	<div class="w-100 text-center sb-login-custom-form-child"
-		 [ngStyle]="{'height': ((auth.heightBgLogin | async) * 24 / 100) + 'px'}">
-		<img class="h-75" src="assets/media/logos/QRcode.png" alt="qr-code">
-	</div>
-</div>
+<!--	<div class="w-100 sb-login-custom-form-child"-->
+<!--		 [ngStyle]="{'height': ((auth.heightBgLogin | async) * 9 / 100) + 'px'}">-->
+<!--		<div class="text-center">-->
+<!--			<div class="forget-password">-->
+<!--				<span class="sb-cursor-pointer" (click)="forgotPassword()">{{ 'AUTH.FORGOT.TITLE' | translate }}</span>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		<div class="text-center">-->
+<!--			<div class="sign-up-seanet">-->
+<!--				<span class="sb-cursor-pointer" (click)="register()">{{ 'AUTH.REGISTER.TITLE_LOGIN' | translate }}</span>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--	<div class="w-100 text-center sb-login-custom-form-child"-->
+<!--		 [ngStyle]="{'height': ((auth.heightBgLogin | async) * 24 / 100) + 'px'}">-->
+<!--		<img class="h-75" src="assets/media/logos/QRcode.png" alt="qr-code">-->
+<!--	</div>-->
+<!--</div>-->
 
-<div class="bg-container" style="background-image: url(./assets/media/bg/background_resize_PC.png);"
-	 *ngIf="!(authService.isRegister$ | async)">
-	<div class="bg-login" [ngStyle]="{'left': (authService.isMobile | async) ? '' : '7%', 'margin': (authService.isMobile | async) ? 'auto' : ''}">
-		<router-outlet></router-outlet>
-	</div>
-	<div *ngIf="!(authService.isMobile | async)" class="d-flex justify-content-center" style="position: absolute; left: 0; width: 100%; font-size: 14px !important;" [ngStyle]="{'bottom': (authService.footer | async) + 'px'}">
-		<div class="form-group text-center">
-			<div class="text-note" [ngStyle]="{'font-size': getFontSize * 0.8 + 'px'}">
-				Hội sở: 25 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội | Điện thoại: (+84 24) 3944 8688 | Fax: (+84 24) 3944 8689
-				<br/>
-				Website: http://www.seabank.com.vn | Email: contact@seabank.com.vn
-			</div>
-		</div>
-	</div>
-</div> -->
+<!--<div class="bg-container" style="background-image: url(./assets/media/bg/background_resize_PC.png);"-->
+<!--	 *ngIf="!(authService.isRegister$ | async)">-->
+<!--	<div class="bg-login" [ngStyle]="{'left': (authService.isMobile | async) ? '' : '7%', 'margin': (authService.isMobile | async) ? 'auto' : ''}">-->
+<!--		<router-outlet></router-outlet>-->
+<!--	</div>-->
+<!--	<div *ngIf="!(authService.isMobile | async)" class="d-flex justify-content-center" style="position: absolute; left: 0; width: 100%; font-size: 14px !important;" [ngStyle]="{'bottom': (authService.footer | async) + 'px'}">-->
+<!--		<div class="form-group text-center">-->
+<!--			<div class="text-note" [ngStyle]="{'font-size': getFontSize * 0.8 + 'px'}">-->
+<!--				Hội sở: 25 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội | Điện thoại: (+84 24) 3944 8688 | Fax: (+84 24) 3944 8689-->
+<!--				<br/>-->
+<!--				Website: http://www.seabank.com.vn | Email: contact@seabank.com.vn-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div> &ndash;&gt;-->
