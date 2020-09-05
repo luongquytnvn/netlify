@@ -28,74 +28,65 @@
 <!--</div>-->
 
 <div class="bg-container">
-  <div class="bg-login" [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) + 'px'} : null">
-    <div class="sb-login-custom-form" [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) + 'px'} : null">
-      <div class="w-100"
+  <div class="bg-login">
+    <div class="sb-login-custom-form">
+
+
+      <div class="w-100 sb-login-logo"
            style="position: relative; height: 14%">
         <div class="text-center w-100" style="position: absolute; bottom: 0">
           <img alt=""
-               [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) * 8.5 / 100 + 'px'} : null"
-               style="height: 8.5vh"
                src="assets/media/books/1.png">
         </div>
       </div>
 
-      <div class="w-100"
+
+      <div class="w-100 sb-login-welcome"
            style="color: #ffffff; position: relative; height: 16%">
         <div class="text-center"
-             style="position: absolute; bottom: 0; line-height: 3.5vh;">
-			<span
-        [ngStyle]="(heightCustom | async) ? {'font-size': (heightCustom | async) * 2.4 / 100 + 'px'} : null"
-        style="font-size: 2.4vh;">
+             style="position: absolute; bottom: 0;">
+			<span>
         CHÀO MỪNG QUÝ KHÁCH ĐẾN VỚI DỊCH VỤ NGÂN HÀNG TRỰC TUYẾN
 				<a><img class="sb-cursor-pointer"
-                [ngStyle]="(heightCustom | async) ? {'font-size': (heightCustom | async) * 2.5 / 100 + 'px'
-                , 'padding-bottom': (heightCustom | async) * 0.67 / 100 + 'px'} : null"
-                style="height: 2.5vh; padding-bottom: 0.67vh; width: 10%"
+                style="width: 10%"
                 src="assets/media/books/1.png" alt="logo-seanet">
 				</a> CỦA SEABANK
 			</span>
         </div>
       </div>
-      <div class="w-100"
-           style="position: relative; height: 8%; background: #664242">
 
+
+      <div class="w-100 sb-login-text-error"
+           style="position: relative; height: 8%; background: #664242">
       </div>
-      <div class="w-100 text-right"
-           [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) * 5 / 100 + 'px'} : null"
-           style="height: 5vh">
-		<span class="sb-login-lang" style="cursor: pointer; margin-right: 2vh">
+
+
+        <div class="w-100 text-right sb-login-text-lang"
+             style="height: 5%">
+		<span class="sb-login-lang" style="cursor: pointer">
 			<i
-        [ngStyle]="(heightCustom | async) ? {'font-size': (heightCustom | async) * 2 / 100 + 'px', 'margin-right': (heightCustom | async) * 1 / 100 + 'px'} : null"
-        style="font-size: 2vh; margin-right: 1vh"
         class="fas fa-globe-asia"></i>
 			<span
-        [ngStyle]="(heightCustom | async) ? {'font-size': (heightCustom | async) * 2 / 100 + 'px'} : null"
-        style="font-weight: 600; font-size: 2vh;">VI/EN</span>
+        style="font-weight: 600">VI/EN</span>
 		</span>
-      </div>
-      <div class="w-100"
+        </div>
+
+
+      <div class="w-100 sb-login-text-form"
            style="height: 22%; position: relative">
         <form class="kt-form h-100" autocomplete="off">
           <div class="form-group m-0"
                style="height: 32%">
             <div class="d-inline-flex w-100" style="position: relative">
               <img alt=""
-                   [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) * 1.8 / 100 + 'px'
-                   , 'left': (heightCustom | async) * 2 / 100 + 'px'
-                   , 'bottom': (heightCustom | async) * 0.8 / 100 + 'px'} : null"
-                   style="position: absolute; z-index: 1; height: 1.8vh; width: 1.8vh; background: #664242; left: 2vh; bottom: 0.8vh"
+                   style="left: 4%"
                    src="assets/media/books/1.png">
               <input
                 class="inp1"
-                id="input1"
                 autocomplete="new-password"
                 name="username" type="text" placeholder="dfdsfsdfsdf"/>
               <img class="sb-cursor-pointer"
-                   [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) * 1.54 / 100 + 'px'
-                   , 'right': (heightCustom | async) * 2 / 100 + 'px'
-                   , 'bottom': (heightCustom | async) * 0.8 / 100 + 'px'} : null"
-                   style="position: absolute; z-index: 1; height: 1.54vh; right: 2vh; bottom: 0.8vh; width: 1.8vh; background: #664242;"
+                   style="right: 4%"
                    src="assets/media/books/1.png" alt="icon-delete">
             </div>
           </div>
@@ -103,34 +94,21 @@
           <div class="form-group m-0" style="height: 32%">
             <div class="d-inline-flex w-100" style="position: relative">
               <img alt=""
-                   [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) * 1.8 / 100 + 'px'
-                   , 'left': (heightCustom | async) * 2 / 100 + 'px'
-                   , 'bottom': (heightCustom | async) * 0.8 / 100 + 'px'} : null"
-                   style="position: absolute; z-index: 1; height: 1.8vh; left: 2vh; bottom: 0.8vh; width: 1.8vh; background: #664242"
+                   style="left: 4%"
                    src="assets/media/books/1.png">
 
-              <input class="inp2"
-                     id="input2"
+              <input class="inp1"
                      name="new-password" type="password" placeholder="fgdfgdfgdfgdf dfgd"
                      autocomplete="new-password"/>
               <i
-                [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) * 1.58 / 100 + 'px'
-                   , 'right': (heightCustom | async) * 4 / 100 + 'px'
-                   , 'bottom': (heightCustom | async) * 0.8 / 100 + 'px'} : null"
-                style="position: absolute; z-index: 1; height: 1.58vh; right: 4vh; bottom: 0.8vh"
+                style="right: 10%"
                 class="fa fa-eye text-white sb-cursor-pointer" aria-hidden="true"></i>
-              <i
-                [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) * 1.58 / 100 + 'px'
-                   , 'right': (heightCustom | async) * 4 / 100 + 'px'
-                   , 'bottom': (heightCustom | async) * 0.8 / 100 + 'px'} : null"
-                style="position: absolute; z-index: 1; height: 1.58vh; right: 4vh; bottom: 0.8vh"
-                class="fa fa-eye-slash text-white sb-cursor-pointer" aria-hidden="true"
-              ></i>
+<!--              <i-->
+<!--                style="right: 10%"-->
+<!--                class="fa fa-eye-slash text-white sb-cursor-pointer" aria-hidden="true"-->
+<!--              ></i>-->
               <img class="sb-cursor-pointer"
-                   [ngStyle]="(heightCustom | async) ? {'height': (heightCustom | async) * 1.54 / 100 + 'px'
-                   , 'right': (heightCustom | async) * 2 / 100 + 'px'
-                   , 'bottom': (heightCustom | async) * 0.8 / 100 + 'px'} : null"
-                   style="position: absolute; z-index: 1; height: 1.54vh; right: 2vh; bottom: 0.8vh; width: 1.8vh; background: #664242"
+                   style="right: 4%"
                    src="assets/media/books/1.png" alt="icon-delete">
             </div>
           </div>
@@ -143,6 +121,7 @@
           </div>
         </form>
       </div>
+
 
       <div class="w-100"
            style="height: 9%">
@@ -157,12 +136,15 @@
           </div>
         </div>
       </div>
+
+
       <div class="w-100 text-center"
            style="height: 26%; background: antiquewhite">
         <img class="h-75 w-25" style="background: antiquewhite" src="assets/media/books/1.png" alt="qr-code">
       </div>
-    </div>
 
+
+    </div>
   </div>
   <div class="d-flex justify-content-center sb-text-footer"
        style="max-height: 7vh; position: absolute; left: 0; width: 100%;bottom: 0; font-size: 1.5vh;">
