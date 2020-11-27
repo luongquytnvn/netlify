@@ -30,8 +30,8 @@ export class HomeComponent implements OnInit {
   isFocus: boolean = false;
   isKeyPress: boolean = false;
 
-  evenStringKeyDown: BehaviorSubject<any> = new BehaviorSubject<any>('');
-  evenStringKeyUp: BehaviorSubject<any> = new BehaviorSubject<any>('');
+  evenStringKeyDown: BehaviorSubject<KeyboardEvent> = new BehaviorSubject<KeyboardEvent>(null);
+  evenStringKeyUp: BehaviorSubject<KeyboardEvent> = new BehaviorSubject<KeyboardEvent>(null);
 
   @ViewChild('inputOtp1', {static: true}) inputOtp1: ElementRef;
   @Output() callBack = new EventEmitter();
@@ -139,7 +139,7 @@ export class HomeComponent implements OnInit {
     this.evenStringKeyUp.next(event);
     if (Number.isInteger(+event.key)) {
       if (this['input' + index] && this['input' + index] != '') {
-        inputNext.focus();
+        // inputNext.focus();
       }
       this.isKeyPress = false;
     }
@@ -153,7 +153,7 @@ export class HomeComponent implements OnInit {
 
     if (Number.isInteger(+event.key)) {
       if (this['input' + index] && this['input' + index] != '' && this.isKeyPress) {
-        inputNext.focus();
+        // inputNext.focus();
         this.isFocus = true;
       }
       if (this['input' + index] && !this.isKeyPress) {
