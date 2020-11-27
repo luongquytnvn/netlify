@@ -136,8 +136,7 @@ export class HomeComponent implements OnInit {
 
   focusInput(event: KeyboardEvent, index: number, inputPrev: HTMLInputElement, inputNext: HTMLInputElement) {
     console.log(event);
-    this.evenStringKeyUp.next(JSON.stringify(event.key));
-    this.evenStringKeyUp.next(JSON.stringify(event));
+    this.evenStringKeyUp.next(event);
     if (Number.isInteger(+event.key)) {
       if (this['input' + index] && this['input' + index] != '') {
         inputNext.focus();
@@ -149,8 +148,7 @@ export class HomeComponent implements OnInit {
 
   focus(event: KeyboardEvent, index: number, inputPrev: HTMLInputElement, inputNext: HTMLInputElement) {
     console.log(event);
-    this.evenStringKeyDown.next(JSON.stringify(event.key));
-    this.evenStringKeyDown.next(JSON.stringify(event));
+    this.evenStringKeyDown.next(event);
     this.isFocus = false;
 
     if (Number.isInteger(+event.key)) {

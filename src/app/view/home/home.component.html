@@ -45,8 +45,8 @@
              (keyup)="focusInput($event, 6, inputOtp5, inputOtp6)" maxlength="1">
     </div>
     <div class="col-8 offset-2">
-      <div class="my-5">evenStringKeyDown: {{evenStringKeyDown | async}}</div>
-      <div>evenStringKeyUp: {{evenStringKeyUp | async}}</div>
+      <div class="my-5">evenStringKeyDown: {{(evenStringKeyDown | async) | json}}</div>
+      <div>evenStringKeyUp: {{(evenStringKeyUp | async) | json}}</div>
     </div>
   </div>
 </div>
