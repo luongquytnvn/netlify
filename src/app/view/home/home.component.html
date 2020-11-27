@@ -4,7 +4,6 @@
       <input [(ngModel)]="input1" #inputOtp1 id="input-otp-1" type="text"
              class="input-otp form-control text-center"
              pattern="[0-9]*" inputmode="numeric"
-             onkeypress='return event.charCode >= 48 && event.charCode <= 57'
              (keydown)="focus($event, 1, inputOtp1 , inputOtp2)"
              [disabled]="dataLoading | async"
              (keyup)="focusInput($event, 1, inputOtp1 , inputOtp2)" maxlength="1">
