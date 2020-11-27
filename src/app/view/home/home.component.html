@@ -1,159 +1,52 @@
-<!--<div class="bs-background">-->
-<!--  <div class="bs-background-form">-->
-<!--    <div class="sb-form">-->
-<!--      <form class="h-100">-->
-<!--        <div class="form-group m-0" style="height: 20%; border: 1px solid">-->
-<!--          <input class="form-control" type="text">-->
-<!--        </div>-->
-<!--        <div class="form-group m-0" style="height: 40%; border: 1px solid">-->
-<!--          <div>innerWidth: {{innerWidth | async}}</div>-->
-<!--          <div>innerHeight: {{innerHeight | async}}</div>-->
-<!--          <div>screenWidth: {{screenWidth | async}}</div>-->
-<!--          <div>screenHeight: {{screenHeight | async}}</div>-->
-<!--          <div>availWidth: {{availWidth | async}}</div>-->
-<!--          <div>availHeight: {{availHeight | async}}</div>-->
-<!--          <div>outerHeight: {{outerHeight | async}}</div>-->
-<!--          <div>outerWidth: {{outerWidth | async}}</div>-->
-<!--          <div>documentHeight: {{documentHeight | async}}</div>-->
-<!--        </div>-->
-<!--        <div class="form-group m-0" style="height: 20%; border: 1px solid">-->
-<!--          <span>456</span>-->
-<!--        </div>-->
-<!--        <div class="form-group m-0" style="height: 20%; border: 1px solid">-->
-<!--          <span>567</span>-->
-<!--        </div>-->
-<!--      </form>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
-<div class="bg-container">
-  <div class="bg-login">
-    <div class="sb-login-custom-form">
-
-
-      <div class="w-100 sb-login-logo"
-           style="position: relative; height: 14%">
-        <div class="text-center w-100" style="position: absolute; bottom: 0">
-          <img alt=""
-               src="assets/media/books/1.png">
-        </div>
-      </div>
-
-
-      <div class="w-100 sb-login-welcome"
-           style="color: #ffffff; position: relative; height: 16%">
-        <div class="text-center"
-             style="position: absolute; bottom: 0;">
-			<span>
-        CHÀO MỪNG QUÝ KHÁCH ĐẾN VỚI DỊCH VỤ NGÂN HÀNG TRỰC TUYẾN
-				<a><img class="sb-cursor-pointer"
-                style="width: 10%"
-                src="assets/media/books/1.png" alt="logo-seanet">
-				</a> CỦA SEABANK
-			</span>
-        </div>
-      </div>
-
-
-      <div class="w-100 sb-login-text-error"
-           style="position: relative; height: 8%; background: #664242">
-      </div>
-
-
-        <div class="w-100 text-right sb-login-text-lang"
-             style="height: 5%">
-		<span class="sb-login-lang" style="cursor: pointer">
-			<i
-        class="fas fa-globe-asia"></i>
-			<span
-        style="font-weight: 600">VI/EN</span>
-		</span>
-        </div>
-
-
-      <div class="w-100 sb-login-text-form"
-           style="height: 22%; position: relative">
-        <form class="kt-form h-100" autocomplete="off">
-          <div class="form-group m-0"
-               style="height: 32%">
-            <div class="d-inline-flex w-100" style="position: relative">
-              <img alt=""
-                   style="left: 4%"
-                   src="assets/media/books/1.png">
-              <input
-                class="inp1"
-                autocomplete="new-password"
-                name="username" type="text" placeholder="dfdsfsdfsdf"/>
-              <img class="sb-cursor-pointer"
-                   style="right: 4%"
-                   src="assets/media/books/1.png" alt="icon-delete">
-            </div>
-          </div>
-
-          <div class="form-group m-0" style="height: 32%">
-            <div class="d-inline-flex w-100" style="position: relative">
-              <img alt=""
-                   style="left: 4%"
-                   src="assets/media/books/1.png">
-
-              <input class="inp1"
-                     name="new-password" type="password" placeholder="fgdfgdfgdfgdf dfgd"
-                     autocomplete="new-password"/>
-              <i
-                style="right: 10%"
-                class="fa fa-eye text-white sb-cursor-pointer" aria-hidden="true"></i>
-<!--              <i-->
-<!--                style="right: 10%"-->
-<!--                class="fa fa-eye-slash text-white sb-cursor-pointer" aria-hidden="true"-->
-<!--              ></i>-->
-              <img class="sb-cursor-pointer"
-                   style="right: 4%"
-                   src="assets/media/books/1.png" alt="icon-delete">
-            </div>
-          </div>
-
-          <!--begin::Action-->
-          <div class="text-center m-0" style="height: 36%">
-            <button
-              class="button-login">LOGIN
-            </button>
-          </div>
-        </form>
-      </div>
-
-
-      <div class="w-100"
-           style="height: 9%">
-        <div class="text-center">
-          <div class="forget-password">
-            <span class="sb-cursor-pointer">Quên mật khẩu</span>
-          </div>
-        </div>
-        <div class="text-center">
-          <div class="sign-up-seanet">
-            <span class="sb-cursor-pointer">Đăng ký SeANet</span>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="w-100 text-center"
-           style="height: 26%; background: antiquewhite">
-        <img class="h-75 w-25" style="background: antiquewhite" src="assets/media/books/1.png" alt="qr-code">
-      </div>
-
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8 offset-2 d-inline-flex">
+      <input [(ngModel)]="input1" #inputOtp1 id="input-otp-1" type="text"
+             class="input-otp form-control text-center"
+             pattern="[0-9]*" inputmode="numeric"
+             onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+             (keydown)="focus($event, 1, inputOtp1 , inputOtp2)"
+             [disabled]="dataLoading | async"
+             (keyup)="focusInput($event, 1, inputOtp1 , inputOtp2)" maxlength="1">
+      <input [(ngModel)]="input2" #inputOtp2 id="input-otp-2" type="text"
+             class="input-otp form-control text-center"
+             pattern="[0-9]*" inputmode="numeric"
+             onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+             (keydown)="focus($event, 2, inputOtp1 , inputOtp3)"
+             [disabled]="dataLoading | async"
+             (keyup)="focusInput($event, 2, inputOtp1, inputOtp3)" maxlength="1">
+      <input [(ngModel)]="input3" #inputOtp3 id="input-otp-3" type="text"
+             onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+             class="input-otp form-control text-center"
+             pattern="[0-9]*" inputmode="numeric"
+             (keydown)="focus($event, 3, inputOtp2 , inputOtp4)"
+             [disabled]="dataLoading | async"
+             (keyup)="focusInput($event, 3, inputOtp2, inputOtp4)" maxlength="1">
+      <input [(ngModel)]="input4" #inputOtp4 id="input-otp-4" type="text"
+             onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+             class="input-otp form-control text-center"
+             pattern="[0-9]*" inputmode="numeric"
+             (keydown)="focus($event, 4, inputOtp3 , inputOtp5)"
+             [disabled]="dataLoading | async"
+             (keyup)="focusInput($event, 4, inputOtp3, inputOtp5)" maxlength="1">
+      <input [(ngModel)]="input5" #inputOtp5 id="input-otp-5" type="text"
+             onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+             class="input-otp form-control text-center"
+             pattern="[0-9]*" inputmode="numeric"
+             (keydown)="focus($event, 5, inputOtp4 , inputOtp6)"
+             [disabled]="dataLoading | async"
+             (keyup)="focusInput($event, 5, inputOtp4, inputOtp6)" maxlength="1">
+      <input [(ngModel)]="input6" #inputOtp6 id="input-otp-6" type="text"
+             onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+             class="input-otp form-control text-center"
+             pattern="[0-9]*" inputmode="numeric"
+             (keydown)="focus($event, 6, inputOtp5 , inputOtp6)"
+             [disabled]="dataLoading | async"
+             (keyup)="focusInput($event, 6, inputOtp5, inputOtp6)" maxlength="1">
     </div>
-  </div>
-  <div class="d-flex justify-content-center sb-text-footer"
-       style="position: absolute; left: 0; width: 100%">
-    <div class="form-group text-center">
-      <div class="text-note">
-        Hội sở: 25 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội | Điện thoại: (+84 24) 3944 8688 | Fax: (+84 24) 3944 8689
-        <br/>
-        Website: http://www.seabank.com.vn | Email: contact@seabank.com.vn
-      </div>
+    <div class="col-8 offset-2">
+      <div class="my-5">evenStringKeyDown: {{evenStringKeyDown | async}}</div>
+      <div>evenStringKeyUp: {{evenStringKeyUp | async}}</div>
     </div>
   </div>
 </div>
