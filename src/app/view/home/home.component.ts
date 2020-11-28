@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, OnInit, Output, ViewChild} from '@angular/
 import {BehaviorSubject} from 'rxjs';
 import {EventEmitter} from 'events';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {replaceVietnamese} from './replaceVietnamese';
 
 declare var $: any;
 
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
   otpError: string;
   isFocus: boolean = false;
   isKeyPress: boolean = false;
+  timeOut: any = [];
 
   evenStringKeyDown: BehaviorSubject<KeyboardEvent> = new BehaviorSubject<KeyboardEvent>(null);
   evenStringKeyUp: BehaviorSubject<KeyboardEvent> = new BehaviorSubject<KeyboardEvent>(null);
@@ -181,5 +183,41 @@ export class HomeComponent implements OnInit {
 
   test(event) {
     console.log(event);
+  }
+
+  testKeyDown($event: KeyboardEvent) {
+    console.log($event.keyCode);
+    console.log(String.fromCharCode($event.keyCode));
+    console.log($event.which);
+    console.log(String.fromCharCode($event.which));
+  }
+
+  testKeyUp($event: KeyboardEvent, value: any) {
+    console.log($event);
+    console.log(value);
+    console.log(replaceVietnamese(value));
+  }
+
+  addSpace($event: KeyboardEvent, a: any) {
+    // a.value = a.value + ' ';
+    if ($event.which == 8) {
+      if (this.timeOut) {
+        clearTimeout( this.timeOut);
+      }
+      this.timeOut = setTimeout(() => {
+        a.value = a.value.slice(0, a.value.length - 1);
+      }, 100);
+    }
+    if ($event.which == 231 && this.timeOut) {
+     clearTimeout( this.timeOut);
+    }
+    return false;
+  }
+
+  deleteSpace($event: KeyboardEvent, a: any) {
+    console.log($event.key);
+    if (($event.which >= 48 && $event.which <= 57) || ($event.which >= 65 && $event.which <= 90)) {
+      a.value = a.value + $event.key;
+    }
   }
 }
