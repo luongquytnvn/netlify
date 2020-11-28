@@ -135,14 +135,11 @@ export class HomeComponent implements OnInit {
   }
 
   focusInput(event: KeyboardEvent, index: number, inputPrev: HTMLInputElement, inputNext: HTMLInputElement) {
-    if (!(event.which >= 48 && event.which <= 57)) {
-      return false;
-    }
     console.log(event);
     this.evenStringKeyUp.next(event);
     if (Number.isInteger(+event.key)) {
       if (this['input' + index] && this['input' + index] != '') {
-        // inputNext.focus();
+        inputNext.focus();
       }
       this.isKeyPress = false;
     }
@@ -150,16 +147,13 @@ export class HomeComponent implements OnInit {
   }
 
   focus(event: KeyboardEvent, index: number, inputPrev: HTMLInputElement, inputNext: HTMLInputElement) {
-    if (!(event.which >= 48 && event.which <= 57)) {
-      return false;
-    }
     console.log(event);
     this.evenStringKeyDown.next(event);
     this.isFocus = false;
 
     if (Number.isInteger(+event.key)) {
       if (this['input' + index] && this['input' + index] != '' && this.isKeyPress) {
-        // inputNext.focus();
+        inputNext.focus();
         this.isFocus = true;
       }
       if (this['input' + index] && !this.isKeyPress) {
@@ -177,5 +171,9 @@ export class HomeComponent implements OnInit {
         this['input' + index] = null;
       }
     }
+  }
+
+  test(event) {
+    console.log(event);
   }
 }
