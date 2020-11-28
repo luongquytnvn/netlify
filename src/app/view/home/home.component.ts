@@ -135,6 +135,9 @@ export class HomeComponent implements OnInit {
   }
 
   focusInput(event: KeyboardEvent, index: number, inputPrev: HTMLInputElement, inputNext: HTMLInputElement) {
+    if (!(event.which >= 48 && event.which <= 57)) {
+      this['input' + index] = null;
+    }
     console.log(event);
     this.evenStringKeyUp.next(event);
     if (Number.isInteger(+event.key)) {
@@ -147,6 +150,9 @@ export class HomeComponent implements OnInit {
   }
 
   focus(event: KeyboardEvent, index: number, inputPrev: HTMLInputElement, inputNext: HTMLInputElement) {
+    if (!(event.which >= 48 && event.which <= 57)) {
+      this['input' + index] = null;
+    }
     console.log(event);
     this.evenStringKeyDown.next(event);
     this.isFocus = false;
