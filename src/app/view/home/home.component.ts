@@ -215,9 +215,18 @@ export class HomeComponent implements OnInit {
   }
 
   deleteSpace($event: KeyboardEvent, a: any) {
+    // a.value = replaceVietnamese(a.value);
     console.log($event.key);
     if (($event.which >= 48 && $event.which <= 57) || ($event.which >= 65 && $event.which <= 90)) {
       a.value = a.value + $event.key;
     }
+  }
+
+  qqq($event: KeyboardEvent) {
+    this.evenStringKeyDown.next($event);
+  }
+
+  ppp($event: KeyboardEvent) {
+    this.evenStringKeyUp.next($event);
   }
 }

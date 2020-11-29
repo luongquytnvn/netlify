@@ -45,7 +45,7 @@
              (keyup)="focusInput($event, 6, inputOtp5, inputOtp6)" maxlength="1">
     </div>
     <div class="form-group">
-      <input type="text" onkeydown="return (event.which >= 48 && event.which <= 57) || (event.which >= 65 && event.which <= 90);">
+      <input type="text" (keydown)="qqq($event)" (keyup)="ppp($event)">
       <input type="text"
              (keydown)="addSpace($event, ppppp)"
              (keyup)="deleteSpace($event, ppppp)"
